@@ -1,0 +1,23 @@
+[package]
+name = "logscan"
+version = "0.1.0"
+edition = "2021"
+authors = ["txltedxgod <seidoutakidzava@gmail.com>"]
+description = "Fast multi-threaded CLI log parser and pattern analyzer written in Rust"
+readme = "README.md"
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+memmap2 = "0.9"
+rayon = "1.8"
+regex = "1.10"
+colored = "2.1"
+anyhow = "1.0"
+indicatif = "0.17"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
